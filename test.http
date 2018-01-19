@@ -1,0 +1,47 @@
+### 0
+//up to 128kb on u1
+POST http://localhost:9000/u1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+ "a" :"b"
+}
+
+### 1
+//up to 128kb on u1
+POST http://localhost:9000/u1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+< ./upTo128kb.json
+
+### 2
+//up to 128kb on u2
+POST http://localhost:9000/u2 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+< ./upTo128kb.json
+
+### 3
+//bigger than 128kb on u1
+POST http://localhost:9000/u1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+< ./biggerThan128kb.json
+
+### 4
+//bigger than 128kb on u2
+POST http://localhost:9000/u2 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+< ./biggerThan128kb.json
+
+###
+
+
+
+
